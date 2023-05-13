@@ -1,6 +1,8 @@
 # Python Scraper
 
 Here is a simple scraper (with added history saving) that searches the website provided with a link for a element/list of elements with a specific class or id.
+
+### SCREENSHOT
 ![Screenshot](image.png)
 
 ### HOW TO USE IT
