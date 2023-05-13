@@ -1,7 +1,9 @@
 # Python Scraper
 
 Here is a simple scraper (with added history saving) that searches the website provided with a link for a element/list of elements with a specific class or id.
-###HOW TO USE IT
+![Screenshot](image.png)
+
+### HOW TO USE IT
 1. Enter the link to website you would like to scrape in the variable URL like this  ```URL="https://www.website.com"``` (line 17)
 2. Enter the keywords you would like the scraper to search for like this```keywords=["keyword1", "keyword2", "keyword3"]``` (line 14)
 3. Change the "classname" in ```results = soup.find_all("div", {"class": "classname"})``` to the name of the class you are looking for (if you are looking for an id, then change "class" to "id" and "classname" to the id name you are looking for)
