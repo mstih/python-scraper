@@ -37,8 +37,10 @@ def readJSON():
 
 def writeJSON():
         global dictionary
+        print("Writing new data to JSON file...", end='')
         with open("data.json", "w") as writefile:
                 json.dump(dictionary, writefile)
+                print("SUCCESSFUL!")
 
 
 #main scraping function
@@ -104,6 +106,8 @@ def alertViaEMail():
         for key, value in temp_dictionary.items():
                 message_body += f"{listcount}. {key}; Link to the file: {value} \n"
                 listcount = listcount+1
+        smtp_link = "smtp.gmail.com"
+        smtp_port = 587
 
         #building a message
         mail = EmailMessage()
@@ -113,7 +117,7 @@ def alertViaEMail():
         mail['To'] = receiver_email
 
         #starting tls connection, loging in and sending a message
-        with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+        with smtplib.SMTP(smtp_link, smtp_port) as smtp:
                 smtp.starttls()
                 smtp.login(sender_email, valueforauth)
                 smtp.send_message(mail)
